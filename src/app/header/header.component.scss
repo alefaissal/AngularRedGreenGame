@@ -31,21 +31,13 @@
   border-bottom: 2px solid black;
   text-align: center;
   font-size: 2rem;
-  height: 9rem;
+  height: 4rem;
 }
 
 .tittle {
   position: relative;
   top: 25%;
   font-size: 4rem;
-}
-
-.red {
-  color: red;
-}
-
-.green {
-  color: green;
 }
 
 .links-container {
@@ -61,7 +53,7 @@ a {
   font-size: 1.5rem;
   text-decoration: none;
   color: black;
-  padding-top: 2px;
+  padding-top: 10px;
 
   :hover {
     cursor: pointer;

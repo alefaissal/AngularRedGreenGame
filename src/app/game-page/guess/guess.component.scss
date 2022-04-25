@@ -1,0 +1,40 @@
+.container {
+  border: 2px black solid;
+  width: 50%;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+span {
+  margin-right: 0.5rem;
+}
+
+.guess-container {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.guess {
+  width: 60%;
+}
+
+.green {
+  width: 20%;
+}
+
+.red {
+  width: 20%;
+}
+
+.message-container {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.message {}

@@ -1,21 +1,96 @@
-<div>
-  <h1>
-    The Red&Green Game
-  </h1>
-  <h2>
-    Start with your level of difficult:
-    <li>Easy</li>
-    <li>Medium</li>
-    <li>Difficult</li>
-    <li>Really Hard</li>
-    <li>Impossible</li>
-  </h2>
+<div class="container">
+  <div class="title">
+    Ready to play? So let's go!!!
+  </div>
+  <!--title-->
 
-  <p>
-    Example of the password (depending on the difficulty)
-  </p>
-  <p>
-    create a dynamic table for each guess result with
-    number of reds, number of greens and final result
-  </p>
+  <div class="radio-container">
+    <div class="choose-level">
+      {{getLevelMessage()}}
+    </div>
+    <!--choose-level-->
+
+    <mat-radio-group class="radio-group" aria-label="Start with your level of difficult:"
+      (change)="generateNewPassword($event)">
+      <mat-radio-button value="easy">Easy</mat-radio-button>
+      <mat-radio-button value="medium">Medium</mat-radio-button>
+      <mat-radio-button value="difficult">Difficult</mat-radio-button>
+      <mat-radio-button value="reallyHard">Really Hard</mat-radio-button>
+      <mat-radio-button value="impossible">Impossible</mat-radio-button>
+    </mat-radio-group>
+    <!--radio-group-->
+
+  </div>
+  <!--radio-container-->
+
+  <div class="example-reset-container">
+    <div class="pwd-example-title">
+      Example of the password:
+      <span *ngIf="getExampleOfPwd() !== ''" class="pwd-example">
+        {{getExampleOfPwd()}}
+      </span>
+
+    </div>
+    <!--pwd-example-title-->
+
+    <div class="reset-container">
+      <span class="reset-text">
+        You can reset the game here
+      </span>
+      <button mat-button (click)="reset()">Reset</button>
+    </div>
+    <!--reset-container-->
+
+  </div>
+  <!--example-reset-container-->
+
+  <div class="guess-container">
+    <div class="guess-text-input-button-container">
+      <div class="guess-text">
+        Enter your guess:
+        <input mat-input type="number" placeholder="Enter your guess" [(ngModel)]='inputGuess'>
+      </div>
+      <!--guess-text-->
+      <button mat-button type="button" (click)="validateGuess(inputGuess);" [disabled]="enableButton">Confirm</button>
+    </div>
+    <!--guess-text-input-button-container-->
+
+    <div class="last-message-container">
+      <div class="last-guess">
+        <div class="last-guess-number" *ngIf="guesses.length > 0">
+          <span>Last guess:</span>
+          {{guesses[guesses.length-1].guess}}
+        </div>
+        <div *ngIf="numberOfTries>0">
+          <span class="number-chances">Number of chances: {{numberOfTries}}</span>
+        </div>
+
+        <!--ngIf-->
+      </div>
+      <!--last-guess-->
+
+      <div class="guess-message">
+        {{guessMessage}}
+      </div>
+      <!--guess-message-->
+
+    </div>
+    <!--last-message-container-->
+
+
+
+  </div>
+  <!--guess-container-->
+
+
+
+
+  <div *ngIf="guesses.length > 0">
+    <div *ngFor="let guess of guesses; let i=index;">
+      <app-guess [guessObject]="guesses[guesses.length-1-i]"></app-guess>
+    </div>
+    <!--ngFor-->
+  </div>
+  <!--ngIf-->
 </div>
+<!--container-->
