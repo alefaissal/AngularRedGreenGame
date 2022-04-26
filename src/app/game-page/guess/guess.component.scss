@@ -38,3 +38,41 @@ span {
 }
 
 .message {}
+
+
+@media (min-width: 375px) {
+  .container {
+    border: 2px black solid;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .guess-container {
+    height: 2rem;
+
+    span {
+      margin-right: 0.1rem;
+    }
+  }
+
+  .guess {
+    width: 45%;
+  }
+
+  .green {
+    width: 30%;
+  }
+
+  .red {
+    width: 25%;
+  }
+
+  .message-container {
+    // display: flex;
+    height: 1rem;
+    // align-items: center;
+    padding: 1rem;
+  }
+}

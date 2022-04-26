@@ -131,16 +131,17 @@ export class GamePageComponent implements OnInit {
       gMap.set(gStr[i], 1);
     }
   }
-
+  
   pMap.forEach((value, key) => {
     if (gMap.has(key)) {
       red =
-        value <= gMap.get(key)
-          ? (red = red + value)
-          : (red = red + gMap.get(key));
+      value <= gMap.get(key)
+      ? (red = red + value)
+      : (red = red + gMap.get(key));
     }
   });
-
+  
+  this.numberOfTries = this.numberOfTries-1;
   message = (this.numberOfTries<1)?"Sorry, Game Over. Try again. The password was: " + this.password.pwd:
             (green === this.password.lenght)?"Congrats!! You got it!":
             ((green === 0) && (red-green) === 0)?"Oh no! Don't get discouraged try another guess!":
@@ -157,8 +158,6 @@ export class GamePageComponent implements OnInit {
   this.guesses.push(guessObject);
   if(green === this.password.lenght || this.numberOfTries<1){
     this.enableButton=true;
-  }else{
-    this.numberOfTries = this.numberOfTries-1;
   }
   return;
   }

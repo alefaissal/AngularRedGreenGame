@@ -96,10 +96,125 @@ button {
   margin-right: 1rem;
 }
 
-.guess-text {}
-
 .guess-message {
-  //   margin-bottom: 1rem;
   height: 2rem;
   color: blue;
+}
+
+
+@media (min-width: 375px) {
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .choose-level {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .radio-group {
+    width: 100%;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    word-wrap: break-word;
+    display: block;
+
+    .mat-radio-button {
+      padding-bottom: 5px;
+    }
+
+    ::ng-deep .mat-radio-label-content {
+      margin-right: 0.2rem;
+      padding-right: 15px;
+      padding-left: 4px;
+    }
+  }
+
+
+  .example-reset-container {
+    flex-direction: column;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .pwd-example-title {
+    margin-bottom: 0.5rem;
+    align-self: start;
+  }
+
+  .pwd-example {
+    font-weight: bold;
+    color: green;
+    padding-left: 1rem;
+  }
+
+  .reset-text {
+    color: rgb(176, 16, 16);
+    font-weight: bold;
+    margin-right: -1rem;
+  }
+
+  button {
+    background-color: chocolate;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: normal !important;
+  }
+
+  .guess-container {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+
+  .guess-text-input-button-container {
+    align-items: baseline;
+    width: 100%;
+
+    button {
+      background-color: chocolate;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: normal !important;
+
+      ::ng-deep .mat-button-wrapper {
+        margin-right: 2rem;
+      }
+    }
+
+    input {
+      height: 1rem;
+      margin-top: 0.3rem
+    }
+
+  }
+
+  .last-message-container {
+    margin-top: 1rem;
+  }
+
+  .last-guess {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+    height: 0.6rem;
+  }
+
+  .last-guess-number {
+    span {
+      margin-right: 0;
+    }
+  }
+
+  .guess-message {
+    height: 1rem;
+    // margin-top: -0.5rem;
+  }
+
 }

@@ -48,21 +48,22 @@
     <div class="guess-text-input-button-container">
       <div class="guess-text">
         Enter your guess:
-        <input mat-input type="number" placeholder="Enter your guess" [(ngModel)]='inputGuess'>
+        <input mat-input type="number" (keydown.enter)="validateGuess(inputGuess)" placeholder="Enter your guess"
+          [(ngModel)]='inputGuess'>
       </div>
       <!--guess-text-->
-      <button mat-button type="button" (click)="validateGuess(inputGuess);" [disabled]="enableButton">Confirm</button>
+      <button mat-button type="button" (click)="validateGuess(inputGuess)" [disabled]="enableButton">Confirm</button>
     </div>
     <!--guess-text-input-button-container-->
 
     <div class="last-message-container">
-      <div class="last-guess">
+      <div class="last-guess" *ngIf="numberOfTries>0">
         <div class="last-guess-number" *ngIf="guesses.length > 0">
           <span>Last guess:</span>
           {{guesses[guesses.length-1].guess}}
         </div>
-        <div *ngIf="numberOfTries>0">
-          <span class="number-chances">Number of chances: {{numberOfTries}}</span>
+        <div>
+          <span class="number-chances">Number of tries: {{numberOfTries}}</span>
         </div>
 
         <!--ngIf-->

@@ -18,7 +18,6 @@
 }
 
 .title-links-container {
-  //   background-color: green;
   width: 90%;
   height: 90%;
   display: flex;
@@ -65,4 +64,26 @@ img {
   width: 100%;
   height: 100%;
 
+}
+
+@media (min-width: 375px) {
+  .outer-container {
+    width: 100%;
+  }
+
+  .tittle {
+    font-size: 1.5rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+
+  .title-container {
+    height: 2rem;
+  }
+
+  .image-container {
+    width: 27%;
+  }
 }
